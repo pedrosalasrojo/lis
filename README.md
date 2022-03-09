@@ -1,6 +1,6 @@
 # R-CODE TO WORK WITH LIS 
 
-Basic code to work with Luxembourg Income Study (LIS/LWS) data.
+Basic code to work with Luxembourg Income Study (LIS/LWS) data. You can directly plug the code in LISSY (see below) and get some results in a Latex-format table.
 
 Note that we the code ist just an example. Use your own code to ammend the data, use PPP deflators, weights, and so on. 
 
@@ -8,39 +8,39 @@ Ideally, use the sample data from "self teaching" (see below), write your code i
 
 If you are not familiar with LIS/LWS data, have a look at the links below. You might be interested on runing some sample exercises.
 
-Some important resources:
+# Some important resources:
 
-# Appropriate methodology
+Appropriate methodology
 https://www.lisdatacenter.org/data-access/key-figures/methods/
 
-# PPP Deflators
+PPP Deflators
 https://www.lisdatacenter.org/resources/ppp-deflators/
 
-# Functions included
+Functions included
 https://www.lisdatacenter.org/data-access/key-figures/programs/
 
-# Use R with LISSY
+Use R with LISSY
 https://www.lisdatacenter.org/data-access/lissy/syntax/r/
 
-# Online Tutorial Series
+Online Tutorial Series
 https://www.lisdatacenter.org/resources/online-tutorial-series/
 
-# Sample exercises
+Sample exercises
 https://www.lisdatacenter.org/resources/self-teaching/
 
 
-Some other resources:
+# Some other resources:
 
-# Main LIS web
+Main LIS web
 https://www.lisdatacenter.org/
 
-# LISSY 
+LISSY 
 https://www.lisdatacenter.org/data-access/lissy/
 
-# METIS
+METIS
 https://www.lisdatacenter.org/frontend#/home
 
-# Data access
+Data access
 https://www.lisdatacenter.org/data-access/
 
 DO NOT FORGET TO CITE LIS/LWS DATA
