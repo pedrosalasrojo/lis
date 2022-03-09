@@ -38,14 +38,7 @@ for (ccyy in datasets) {
   
   # Print name of dataset 
   print(ccyy) 
-  
-  # Reset objects 
-  data1 <- NULL 
-  data2 <- NULL 
-  data  <- NULL 
-  dat_emp <- NULL 
-  tab <- NULL 
-  
+   
   # Get data with functions previouisly defined 
   data1 <- seth(paste0(ccyy,'h'))  
   data2 <- setp(paste0(ccyy,'p')) 
@@ -53,28 +46,28 @@ for (ccyy in datasets) {
   # Merge by ID 
   data <- merge(data1, data2, by=c("hid"), sort=TRUE) 
   
-  # Get na.omit information 
+  # Get is.na information 
   print(summary(is.na(data))) 
   
-  # Eliminate NA. variables (USE THIS WITH CAUTION) 
+  # Eliminate NA. variables (USE THIS LINE WITH CAUTION) 
   data <- na.omit(data) 
   print(summary(is.na(data))) 
   
   # Arrange the data, names and so on. 
   data <- data %>% 
-    filter(age<65) %>% 
+    filter(age<66) %>% 
     rename(weights = hpopwgt, labinc = hilabour) 
   
-  # Baseline statistics  
+  # Compute the analysis of interest. Here, we show simple baseline statistics  
   
   tab <- data %>% 
     summarise(country = ccyy, 
               observations = nrow(data), 
               mean = round(weighted.mean(labinc, weights, na.rm = TRUE), 2), 
               gini = round(gini.wtd(labinc, weights), 4), 
-              mld = round(mld.wtd(labinc, weights), 4))  
+              mld  = round(mld.wtd(labinc, weights), 4))  
   
-  # Join results for all ccyy 
+  # Once you have all your results, store them in an object
   results <- rbind(results, tab) 
   
 } 
@@ -82,8 +75,10 @@ for (ccyy in datasets) {
 # Omit first row of results (NA) 
 results <- na.omit(results) 
 
-# Plug results in a Latex Table. Copy the Table 
+# Plug results in a Latex Table.  
 table <- xtable(results , digits=c(0,0,0,2,4,4), caption=paste0("Original Statistics"),  
                 label=paste0("originalstatistics")) 
 names(table)<-c('Country', 'N', 'Mean', 'Gini', 'MLD') 
 print(table, include.rownames=FALSE,  caption.placement = "top")
+
+# You can download this table and plug it in your research
